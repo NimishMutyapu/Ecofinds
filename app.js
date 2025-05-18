@@ -37,6 +37,13 @@ const cartItems = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
 const checkoutBtn = document.getElementById('checkout-btn');
 
+document.getElementById('back-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  // Call your function to show the previous screen
+  showMainScreen();
+});
+
+
 // Initialize the app
 function init() {
     // Load sample data if no data in localStorage
@@ -714,13 +721,6 @@ function renderPurchaseHistory() {
         historyList.appendChild(purchaseElement);
     });
 }
-
-document.getElementById('back-btn').addEventListener('click', function(e) {
-  e.preventDefault();
-  // Call your function to show the previous screen
-  showMainScreen();
-});
-
 
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
