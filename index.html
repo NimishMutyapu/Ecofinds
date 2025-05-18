@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFinds - Sustainable Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Auth Screen -->
+        <div id="auth-screen" class="screen active">
+            <div class="auth-container">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>EcoFinds</h1>
+                </div>
+                <div id="login-form">
+                    <h2>Login</h2>
+                    <input type="email" id="login-email" placeholder="Email">
+                    <input type="password" id="login-password" placeholder="Password">
+                    <button id="login-btn">Login</button>
+                    <p class="auth-switch">Don't have an account? <span id="show-signup">Sign Up</span></p>
+                </div>
+                <div id="signup-form" class="hidden">
+                    <h2>Sign Up</h2>
+                    <input type="text" id="signup-username" placeholder="Username">
+                    <input type="email" id="signup-email" placeholder="Email">
+                    <input type="password" id="signup-password" placeholder="Password">
+                    <button id="signup-btn">Sign Up</button>
+                    <p class="auth-switch">Already have an account? <span id="show-login">Login</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App Screens -->
+        <div id="main-app" class="hidden">
+            <!-- Header -->
+            <header>
+                <div class="header-content">
+                    <h1><i class="fas fa-leaf"></i> EcoFinds</h1>
+                    <div class="header-actions">
+                        <button id="user-profile-btn"><i class="fas fa-user"></i></button>
+                        <button id="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Navigation -->
+            <nav>
+                <button class="nav-btn active" data-screen="product-feed"><i class="fas fa-home"></i> Home</button>
+                <button class="nav-btn" data-screen="my-listings"><i class="fas fa-list"></i> My Listings</button>
+                <button class="nav-btn" data-screen="purchase-history"><i class="fas fa-history"></i> History</button>
+            </nav>
+
+            <!-- Screens -->
+            <main>
+                <!-- Product Feed Screen -->
+                <div id="product-feed" class="screen active">
+                    <div class="search-filter">
+                        <input type="text" id="search-input" placeholder="Search products...">
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="books">Books</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id="product-list" class="product-grid"></div>
+                    <button id="add-product-btn" class="fab"><i class="fas fa-plus"></i></button>
+                </div>
+
+                <!-- My Listings Screen -->
+                <div id="my-listings" class="screen">
+                    <h2>My Listings</h2>
+                    <div id="user-product-list" class="product-grid"></div>
+                    <button id="add-my-product-btn" class="fab"><i class="fas fa-plus"></i></button>
+                </div>
+
+                <!-- Purchase History Screen -->
+                <div id="purchase-history" class="screen">
+                    <h2>Purchase History</h2>
+                    <div id="history-list" class="product-list"></div>
+                </div>
+
+                <!-- Product Detail Screen -->
+                <div id="product-detail" class="screen">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <div id="product-detail-content"></div>
+                    <button id="add-to-cart-btn" class="action-btn">Add to Cart</button>
+                </div>
+
+                <!-- Add/Edit Product Screen -->
+                <div id="edit-product" class="screen">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <h2 id="edit-product-title">Add New Product</h2>
+                    <form id="product-form">
+                        <input type="text" id="product-name" placeholder="Product Title" required>
+                        <select id="product-category" required>
+                            <option value="">Select Category</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="books">Books</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea id="product-description" placeholder="Description" required></textarea>
+                        <input type="number" id="product-price" placeholder="Price" min="0" step="0.01" required>
+                        <div class="image-upload">
+                            <label for="product-image">Product Image:</label>
+                            <input type="file" id="product-image" accept="image/*">
+                            <div id="image-preview"></div>
+                        </div>
+                        <button type="submit" id="submit-product-btn">Submit</button>
+                    </form>
+                </div>
+
+                <!-- User Dashboard Screen -->
+                <div id="user-dashboard" class="screen">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <h2>My Profile</h2>
+                    <div class="profile-header">
+                        <div class="avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="profile-username">Username</h3>
+                    </div>
+                    <form id="profile-form">
+                        <label for="edit-username">Username:</label>
+                        <input type="text" id="edit-username" required>
+
+                        <label for="edit-email">Email:</label>
+                        <input type="email" id="edit-email" required>
+
+                        <label for="edit-password">New Password (leave blank to keep current):</label>
+                        <input type="password" id="edit-password">
+
+                        <button type="submit" class="action-btn">Update Profile</button>
+                    </form>
+                    <button id="logout-btn" class="logout-btn">Logout</button>
+                </div>
+
+                <!-- Cart Screen -->
+                <div id="cart-screen" class="screen">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <h2>Your Cart</h2>
+                    <div id="cart-items"></div>
+                    <div class="cart-summary">
+                        <p>Total: $<span id="cart-total">0.00</span></p>
+                        <button id="checkout-btn" class="action-btn">Checkout</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>	
