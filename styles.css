@@ -2,8 +2,8 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #4CAF50;
-    --secondary-color: #2E7D32;
+    --primary-color: #002b80;
+    --secondary-color: #DEDEE0;
     --accent-color: #8BC34A;
     --light-color: #F1F8E9;
     --dark-color: #1B5E20;
@@ -61,6 +61,7 @@ body {
 
 .logo h1 {
     font-size: 1.8rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #login-form,
