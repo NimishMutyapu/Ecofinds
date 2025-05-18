@@ -82,7 +82,7 @@ function init() {
                 category: 'clothing',
                 price: 75.50,
                 userId: 2,
-                image: null
+                image: 'https://www.orangetree.in/cdn/shop/files/Gallery-1ChiyoL-ShapedSofaBuyOnline.jpg?v=1722852692'
             },
             {
                 id: 3,
@@ -91,7 +91,7 @@ function init() {
                 category: 'books',
                 price: 15.00,
                 userId: 1,
-                image: null
+                image: 'https://craftsmill.in/cdn/shop/files/sofas-accent-chairs-cider-orange-soft-velvet-touch-fabric-emily-flared-arm-2-seater-sofa-60-46567514931491.jpg?v=1725047510'
             }
         ];
         localStorage.setItem('ecoFindsProducts', JSON.stringify(sampleProducts));
