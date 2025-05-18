@@ -715,5 +715,12 @@ function renderPurchaseHistory() {
     });
 }
 
+document.getElementById('back-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  // Call your function to show the previous screen
+  showMainScreen();
+});
+
+
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
