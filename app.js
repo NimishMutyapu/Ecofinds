@@ -67,6 +67,7 @@ function init() {
                 userId: 1,
                 image: null
             },
+            
             {
                 id: 2,
                 title: 'Vintage Jacket',
