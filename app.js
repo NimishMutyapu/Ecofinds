@@ -72,7 +72,7 @@ function init() {
                 category: 'furniture',
                 price: 45.99,
                 userId: 1,
-                image: null
+                image: 'https://www.godrejinterio.com/imagestore/B2C/56101502SD01899/56101502SD01899_A2_803x602.jpg'
             },
             
             {
