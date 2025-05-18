@@ -9,6 +9,7 @@
 
 > You can host this frontend using **GitHub Pages** or **Vercel**. Just upload the repo and link it to your backend.
   https://nimishmutyapu.github.io/Ecofinds/
+
 > Video Showing the working of the website
   https://drive.google.com/file/d/1JGrJVMOxqA33oLoeEDhMwku2LUWAq9FM/view
 
